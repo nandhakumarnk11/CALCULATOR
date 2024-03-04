@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div  class="container">
+        <div class="calculator">
+            <input type="text" placeholder="0" id="output">
+            <button onclick="Clear()" class="COLO">CL</button>
+            <button onclick="del()"  class="COLO">DEL</button>
+            <button onclick="display('%')"  class="COLO">%</button>
+            <button onclick="display('/')"  class="COLO">/</button>
+            <button onclick="display('7')" class="COLO">7</button>
+            <button onclick="display('8')">8</button>
+            <button onclick="display('9')">9</button>
+            <button onclick="display('*')">*</button>
+            <button onclick="display('4')" class="COLO">4</button>
+            <button onclick="display('5')">5</button>
+            <button onclick="display('6')">6</button>
+            <button onclick="display('-')">-</button>
+            <button onclick="display('1')" class="COLO">1</button>
+            <button onclick="display('2')">2</button>
+            <button onclick="display('3')">3</button>
+            <button onclick="display('+')">+</button>
+            <button onclick="display('.')" class="COLO">.</button>
+            <button onclick="display('0')">0</button>
+            <button onclick="calculator()" class="equal">=</button>
+           
+
+        </div>
+    </div>
+
+    <script>
+
+        let outputscreen = document.getElementById("output");
+
+
+        function display(num){
+            outputscreen.value += num;
+
+        }
+        function calculator(){
+            try{
+                outputscreen.value = eval(outputscreen.value)
+            }
+            catch (err){
+                alert("INVALID ERROR")
+
+            }
+          
+        }
+
+        function del(){
+
+            outputscreen.value = outputscreen.value.slice(0,-1)
+
+        }
+        function Clear(){
+
+            outputscreen.value = "";
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>
